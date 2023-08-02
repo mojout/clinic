@@ -8,6 +8,7 @@ router.register(r'patientcard', ExerciseViewSet, basename='patientcard')
 
 urlpatterns = [
     path('', include(router.urls)),
+    # path('patientcard/<int:pk>/', ExerciseViewSetDetail.as_view, name='get_data'),
 
 ]
 
