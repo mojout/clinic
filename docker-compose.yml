@@ -7,7 +7,7 @@ services:
       - postgres_data:/var/lib/postgresql/data/
   dm_web:
     build: .
-    command: python /usr/src/dm_rest/manage.py runserver 0.0.0.0:8000
+    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/usr/src/dm_rest
     ports:
